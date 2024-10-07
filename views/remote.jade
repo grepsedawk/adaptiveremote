@@ -1,0 +1,35 @@
+doctype html
+html
+  head
+    title Roku Remote
+  body
+    h1 Roku Remote Control
+
+    //- Buttons for Roku remote
+    button(onclick="sendKey('Home')") Home
+    button(onclick="sendKey('Up')") Up
+    button(onclick="sendKey('Down')") Down
+    button(onclick="sendKey('Left')") Left
+    button(onclick="sendKey('Right')") Right
+    button(onclick="sendKey('Select')") Select
+    button(onclick="sendKey('Back')") Back
+    button(onclick="sendKey('Play')") Play/Pause
+
+    button(onclick="fetch('/remote/launch/12/70176514/series')") Launch Naruto
+    button(onclick="fetch('/remote/launch/12/80180046/series')") Launch Grey's Anatomy
+
+    //- Script to handle button clicks
+    script.
+      function sendKey(key) {
+        fetch(`/remote/key/${key}`)
+          .then(response => {
+            if (!response.ok) {
+              console.error('Failed to send key:', key);
+            } else {
+              console.log('Key sent successfully:', key);
+            }
+          })
+          .catch(error => {
+            console.error('Error:', error);
+          });
+      }
