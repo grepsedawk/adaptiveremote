@@ -2,23 +2,31 @@ doctype html
 html
   head
     title Roku Remote
+    link(rel="stylesheet", href="/stylesheets/remote.css")
   body
-    h1 Roku Remote Control
+    .remote-container
+      h1 Roku Remote Control
 
-    //- Buttons for Roku remote
-    button(onclick="sendKey('Home')") Home
-    button(onclick="sendKey('Up')") Up
-    button(onclick="sendKey('Down')") Down
-    button(onclick="sendKey('Left')") Left
-    button(onclick="sendKey('Right')") Right
-    button(onclick="sendKey('Select')") Select
-    button(onclick="sendKey('Back')") Back
-    button(onclick="sendKey('Play')") Play/Pause
+      //- Home button with new symbol (⌂)
+      button.home(onclick="sendKey('Home')") ⌂
 
-    button(onclick="fetch('/remote/launch/12/70176514/series')") Launch Naruto
-    button(onclick="fetch('/remote/launch/12/80180046/series')") Launch Grey's Anatomy
+      //- D-Pad buttons with new symbols
+      .dpad-container
+        button.dpad.dpad-up(onclick="sendKey('Up')") ▲
+        button.dpad.dpad-left(onclick="sendKey('Left')") ⮜
+        button.dpad.dpad-select(onclick="sendKey('Select')") ⚪
+        button.dpad.dpad-right(onclick="sendKey('Right')") ➤
+        button.dpad.dpad-down(onclick="sendKey('Down')") ▼
 
-    //- Script to handle button clicks
+      //- Back and Play buttons in the same row with new symbols
+      .row-back-play
+        button.back(onclick="sendKey('Back')") ⏎
+        button.play(onclick="sendKey('Play')") ➤▐▐
+
+      //- Launch buttons
+      button.launch(onclick="fetch('/remote/launch/12/70176514/series')") Launch Naruto
+      button.launch(onclick="fetch('/remote/launch/12/80180046/series')") Launch Grey's Anatomy
+
     script.
       function sendKey(key) {
         fetch(`/remote/key/${key}`)
@@ -32,4 +40,3 @@ html
           .catch(error => {
             console.error('Error:', error);
           });
-      }

@@ -1,0 +1,150 @@
+/* General page styling */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #1c1c1c; /* Dark background */
+    color: #ffffff; /* White text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #ec008c; /* Roku Pink */
+  }
+  
+  /* Main container for the remote layout */
+  .remote-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 320px;
+  }
+  
+  /* Styling the D-Pad container */
+  .dpad-container {
+    display: grid;
+    grid-template-columns: 60px 60px 60px;
+    grid-template-rows: 60px 60px 60px;
+    grid-gap: 10px;
+    margin-bottom: 20px;
+    justify-items: center;
+    align-items: center;
+  }
+  
+  /* D-Pad buttons (Left, Up, Right, Down, Select) */
+  button.dpad {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    border: none;
+    background-color: #6f4be3; /* Roku Purple */
+    color: #ffffff;
+    font-size: 1.5rem; /* Adjust for symbols */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Home button (⌂) */
+  button.home {
+    margin-bottom: 35px; /* Half of the previous 70px */
+    width: 60px;
+    height: 60px;
+    background-color: #3b3b3b; /* Darker gray for Home button */
+    border-radius: 10px;
+    border: none;
+    color: #ffffff;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Hover effect for D-Pad and Home buttons */
+  button.dpad:hover,
+  button.home:hover {
+    background-color: #5a5a5a;
+  }
+  
+  /* Back and Play/Pause buttons */
+  button.back,
+  button.play {
+    width: 60px; /* Same size as Select button */
+    height: 60px;
+    margin: 10px 5px;
+    font-size: 1.5rem; /* Adjust for symbols */
+    border: none;
+    border-radius: 10px; /* Same as Select */
+    background-color: #3b3b3b; /* Darker gray */
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Hover effect for Back and Play/Pause buttons */
+  button.back:hover,
+  button.play:hover {
+    background-color: #6f4be3; /* Roku Purple on hover */
+  }
+  
+  /* Launch buttons (Naruto and Grey's Anatomy) */
+  button.launch {
+    width: 100%;
+    padding: 20px; /* Slightly taller */
+    margin: 10px 0;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #5a5a5a;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button.launch:hover {
+    background-color: #787878; /* Lighter shade for hover */
+  }
+  
+  /* Positioning specific D-Pad buttons */
+  .dpad-up {
+    grid-row: 1 / span 1;
+    grid-column: 2 / span 1;
+  }
+  
+  .dpad-left {
+    grid-row: 2 / span 1;
+    grid-column: 1 / span 1;
+  }
+  
+  /* Updated select button to be "⚪" */
+  .dpad-select {
+    grid-row: 2 / span 1;
+    grid-column: 2 / span 1;
+    font-size: 2rem; /* Slightly larger for visibility of ⚪ symbol */
+  }
+  
+  .dpad-right {
+    grid-row: 2 / span 1;
+    grid-column: 3 / span 1;
+  }
+  
+  .dpad-down {
+    grid-row: 3 / span 1;
+    grid-column: 2 / span 1;
+  }
+  
+  /* Back and Play/Pause buttons in the same row */
+  .row-back-play {
+    display: flex;
+    justify-content: space-between;
+    width: 140px; /* Total width for Back and Play */
+  }
+  
