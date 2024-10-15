@@ -5,7 +5,6 @@ html
   body
     h1 Roku Remote Control
 
-    //- Buttons for Roku remote
     button(onclick="sendKey('Home')") Home
     button(onclick="sendKey('Up')") Up
     button(onclick="sendKey('Down')") Down
@@ -17,8 +16,8 @@ html
 
     button(onclick="fetch('/remote/launch/12/70176514/series')") Launch Naruto
     button(onclick="fetch('/remote/launch/12/80180046/series')") Launch Grey's Anatomy
+    button(onclick="fetch('/remote/launch/291097/622e6dbd-79d2-49ec-b2f5-2a46a29bd57d/series')") Launch "The Way of the Cheetah"
 
-    //- Script to handle button clicks
     script.
       function sendKey(key) {
         fetch(`/remote/key/${key}`)
