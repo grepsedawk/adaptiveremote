@@ -15,11 +15,11 @@ html
         button.movie1(onclick="fetch('/remote/launch/12/70176514/series')") Naruto
         button.movie2(onclick="fetch('/remote/launch/12/80180046/series')") Grey's
         button.movie3(onclick="fetch('/remote/launch/291097/622e6dbd-79d2-49ec-b2f5-2a46a29bd57d/series')") Cheetah
-        button.add(onclick="sendKey('Add2')") ➕
-        button.add(onclick="sendKey('Add3')") ➕
-        button.add(onclick="sendKey('Add4')") ➕
-        button.add(onclick="sendKey('Add5')") ➕
-        button.add(onclick="sendKey('Add6')") ➕
+        button.add(data-index="4", onclick="addMovie(this)") ➕
+        button.add(data-index="5", onclick="addMovie(this)") ➕
+        button.add(data-index="6", onclick="addMovie(this)") ➕
+        button.add(data-index="7", onclick="addMovie(this)") ➕
+        button.add(data-index="8", onclick="addMovie(this)") ➕
 
     // Import the remote.js file here
     script(src="/dynamics/remote.js")
