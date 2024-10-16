@@ -1,34 +1,22 @@
 doctype html
 html
   head
-    title Roku Remote
+    title Remote
+    link(rel="stylesheet", href="/stylesheets/remote.css")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css")
   body
-    h1 Roku Remote Control
+    .remote-container
+      //- Power button with classic power icon
+      button.power(onclick="sendKey('Power')")
+        i(class="fas fa-power-off")
 
-    button(onclick="sendKey('Home')") Home
-    button(onclick="sendKey('Up')") Up
-    button(onclick="sendKey('Down')") Down
-    button(onclick="sendKey('Left')") Left
-    button(onclick="sendKey('Right')") Right
-    button(onclick="sendKey('Select')") Select
-    button(onclick="sendKey('Back')") Back
-    button(onclick="sendKey('Play')") Play/Pause
-
-    button(onclick="fetch('/remote/launch/12/70176514/series')") Launch Naruto
-    button(onclick="fetch('/remote/launch/12/80180046/series')") Launch Grey's Anatomy
-    button(onclick="fetch('/remote/launch/291097/622e6dbd-79d2-49ec-b2f5-2a46a29bd57d/series')") Launch "The Way of the Cheetah"
-
-    script.
-      function sendKey(key) {
-        fetch(`/remote/key/${key}`)
-          .then(response => {
-            if (!response.ok) {
-              console.error('Failed to send key:', key);
-            } else {
-              console.log('Key sent successfully:', key);
-            }
-          })
-          .catch(error => {
-            console.error('Error:', error);
-          });
-      }
+      //- Two-column layout with 8 buttons
+      .button-grid
+        button.movie1(onclick="sendKey('Movie1')") movie1
+        button.movie2(onclick="sendKey('Movie2')") movie2
+        button.add(onclick="sendKey('Add1')") ➕
+        button.add(onclick="sendKey('Add2')") ➕
+        button.add(onclick="sendKey('Add3')") ➕
+        button.add(onclick="sendKey('Add4')") ➕
+        button.add(onclick="sendKey('Add5')") ➕
+        button.add(onclick="sendKey('Add6')") ➕

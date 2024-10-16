@@ -1,0 +1,77 @@
+/* General page styling */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #1c1c1c; /* Dark background */
+  color: #ffffff; /* White text */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Main container for the remote layout */
+.remote-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 320px;
+}
+
+/* Power button styling */
+button.power {
+  margin-bottom: 20px;
+  width: 80px;
+  height: 80px;
+  background-color: #3b3b3b; /* Darker gray for power button */
+  border-radius: 50%;
+  border: none;
+  color: #ffffff;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Button grid for the two-column, four-row layout */
+.button-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  width: 100%; /* Full width */
+  max-width: 320px;
+}
+
+/* General button styling */
+button {
+  width: 100%;
+  padding: 20px;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Styling for movie1 and movie2 buttons */
+button.movie1, button.movie2 {
+  background-color: #6f4be3; /* Roku Purple */
+  color: #ffffff;
+}
+
+/* Styling for plus buttons */
+button.add {
+  background-color: #5a5a5a; /* Lighter gray */
+  color: #ffffff;
+}
+
+/* Hover effect for all buttons */
+button:hover {
+  background-color: #787878; /* Slightly lighter on hover */
+}
+
+/* Hover effect for power button */
+button.power:hover {
+  background-color: #5a5a5a;
+}
