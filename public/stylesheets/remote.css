@@ -1,18 +1,16 @@
-/* General page styling */
 html, body {
   margin: 0;
   padding: 0;
   height: 100%;
   width: 100%;
   font-family: Arial, sans-serif;
-  background-color: #1c1c1c; /* Dark background */
-  color: #ffffff; /* White text */
+  background-color: #1c1c1c;
+  color: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* Main container for the remote layout */
 .remote-container {
   display: flex;
   flex-direction: column;
@@ -20,47 +18,41 @@ html, body {
   max-width: 320px;
 }
 
-/* Power button styling */
 button.power {
   margin-bottom: 20px;
   width: 80px;
   height: 80px;
-  background-color: #28a745; /* Default Green */
+  background-color: #28a745;
   border-radius: 50%;
-  border: 2px solid #ffffff; /* White border */
-  color: #ffffff; /* White icon */
+  border: 2px solid #ffffff;
+  color: #ffffff;
   font-size: 2rem;
   cursor: pointer;
   transition: background-color 0.3s ease, border 0.3s ease;
 }
 
-/* Red state when the power is on */
 button.power.active {
-  background-color: #dc3545; /* Red */
-  border: 2px solid #ffffff; /* White border */
-  color: #ffffff; /* White icon */
+  background-color: #dc3545;
+  border: 2px solid #ffffff;
+  color: #ffffff;
 }
 
-/* Hover effect for power button */
 button.power:hover {
-  background-color: #218838; /* Darker green on hover */
+  background-color: #218838;
 }
 
-/* Hover effect when power button is active */
 button.power.active:hover {
-  background-color: #c82333; /* Darker red on hover */
+  background-color: #c82333;
 }
 
-/* Button grid for the two-column, four-row layout */
 .button-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 10px;
-  width: 100%; /* Full width */
+  width: 100%;
   max-width: 320px;
 }
 
-/* General button styling */
 button {
   width: 100%;
   padding: 20px;
@@ -71,19 +63,16 @@ button {
   transition: background-color 0.3s ease;
 }
 
-/* Styling for movie1 and movie2 buttons */
-button.movie1, button.movie2, button.movie3 {
-  background-color: #6f4be3; /* Roku Purple */
+button.movie1, button.movie2, button.movie3, button.movie4, button.movie5, button.movie6, button.movie7, button.movie8 {
+  background-color: #6f4be3;
   color: #ffffff;
 }
 
-/* Styling for plus buttons */
 button.add {
-  background-color: #5a5a5a; /* Lighter gray */
+  background-color: #5a5a5a;
   color: #ffffff;
 }
 
-/* Hover effect for all buttons */
 button:hover {
-  background-color: #787878; /* Slightly lighter on hover */
+  background-color: #787878;
 }
