@@ -25,13 +25,30 @@ button.power {
   margin-bottom: 20px;
   width: 80px;
   height: 80px;
-  background-color: #3b3b3b; /* Darker gray for power button */
+  background-color: #28a745; /* Default Green */
   border-radius: 50%;
-  border: none;
-  color: #ffffff;
+  border: 2px solid #ffffff; /* White border */
+  color: #ffffff; /* White icon */
   font-size: 2rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, border 0.3s ease;
+}
+
+/* Red state when the power is on */
+button.power.active {
+  background-color: #dc3545; /* Red */
+  border: 2px solid #ffffff; /* White border */
+  color: #ffffff; /* White icon */
+}
+
+/* Hover effect for power button */
+button.power:hover {
+  background-color: #218838; /* Darker green on hover */
+}
+
+/* Hover effect when power button is active */
+button.power.active:hover {
+  background-color: #c82333; /* Darker red on hover */
 }
 
 /* Button grid for the two-column, four-row layout */
@@ -69,9 +86,4 @@ button.add {
 /* Hover effect for all buttons */
 button:hover {
   background-color: #787878; /* Slightly lighter on hover */
-}
-
-/* Hover effect for power button */
-button.power:hover {
-  background-color: #5a5a5a;
 }
