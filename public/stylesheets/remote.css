@@ -72,7 +72,7 @@ button {
 }
 
 /* Styling for movie1 and movie2 buttons */
-button.movie1, button.movie2 {
+button.movie1, button.movie2, button.movie3 {
   background-color: #6f4be3; /* Roku Purple */
   color: #ffffff;
 }
