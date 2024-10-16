@@ -1,42 +1,22 @@
 doctype html
 html
   head
-    title Roku Remote
+    title Remote
     link(rel="stylesheet", href="/stylesheets/remote.css")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css")
   body
     .remote-container
-      h1 Roku Remote Control
+      //- Power button with classic power icon
+      button.power(onclick="sendKey('Power')")
+        i(class="fas fa-power-off")
 
-      //- Home button with new symbol (⌂)
-      button.home(onclick="sendKey('Home')") ⌂
-
-      //- D-Pad buttons with new symbols
-      .dpad-container
-        button.dpad.dpad-up(onclick="sendKey('Up')") ▲
-        button.dpad.dpad-left(onclick="sendKey('Left')") ⮜
-        button.dpad.dpad-select(onclick="sendKey('Select')") ⚪
-        button.dpad.dpad-right(onclick="sendKey('Right')") ➤
-        button.dpad.dpad-down(onclick="sendKey('Down')") ▼
-
-      //- Back and Play buttons in the same row with new symbols
-      .row-back-play
-        button.back(onclick="sendKey('Back')") ⏎
-        button.play(onclick="sendKey('Play')") ➤▐▐
-
-      //- Launch buttons
-      button.launch(onclick="fetch('/remote/launch/12/70176514/series')") Launch Naruto
-      button.launch(onclick="fetch('/remote/launch/12/80180046/series')") Launch Grey's Anatomy
-
-    script.
-      function sendKey(key) {
-        fetch(`/remote/key/${key}`)
-          .then(response => {
-            if (!response.ok) {
-              console.error('Failed to send key:', key);
-            } else {
-              console.log('Key sent successfully:', key);
-            }
-          })
-          .catch(error => {
-            console.error('Error:', error);
-          });
+      //- Two-column layout with 8 buttons
+      .button-grid
+        button.movie1(onclick="sendKey('Movie1')") movie1
+        button.movie2(onclick="sendKey('Movie2')") movie2
+        button.add(onclick="sendKey('Add1')") ➕
+        button.add(onclick="sendKey('Add2')") ➕
+        button.add(onclick="sendKey('Add3')") ➕
+        button.add(onclick="sendKey('Add4')") ➕
+        button.add(onclick="sendKey('Add5')") ➕
+        button.add(onclick="sendKey('Add6')") ➕
