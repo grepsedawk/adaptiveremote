@@ -99,7 +99,6 @@ class RokuReal {
 let Roku
 if (process.env.MOCK) {
   Roku = require("./rokuMock")
-  console.log("Roku", Roku)
 } else {
   Roku = RokuReal
 }

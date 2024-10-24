@@ -14,6 +14,11 @@ class Roku {
           ip: "127.0.0.1",
           mac: "00:00:00:00:00:00",
           friendlyName: "RokuMock",
+        },
+        {
+          ip: "127.0.0.2",
+          mac: "00:00:00:00:00:01",
+          friendlyName: "RokuMock2"
         }
       ])
     })
