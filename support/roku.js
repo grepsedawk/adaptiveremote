@@ -1,8 +1,10 @@
 const dgram = require("dgram")
+const jsdom = require("jsdom")
 
-class Roku {
-  constructor(address) {
+class RokuReal {
+  constructor(address, mac) {
     this.address = address
+    this.mac = mac
   }
 
   static listDevices() {
@@ -42,10 +44,23 @@ class Roku {
       socket.on("message", (msg, rinfo) => {
         const message = msg.toString()
         if (message.includes("roku:ecp")) {
-          rokuDevices.push({
-            address: rinfo.address,
-            message: message,
-          })
+          const mac = message.match(/WAKEUP: MAC=(.*);/)[1]
+          fetch(`http://${rinfo.address}:8060/query/device-info`)
+            .then((res) => res.text())
+            .then((data) => {
+              console.log("data", data)
+              const dom = new jsdom.JSDOM(data)
+              const friendlyName = dom.window.document.querySelector(
+                "friendly-device-name",
+              ).textContent
+
+              rokuDevices.push({
+                ip: rinfo.address,
+                mac: mac,
+                friendlyName: friendlyName,
+                message: message,
+              })
+            })
         }
       })
 
@@ -72,10 +87,21 @@ class Roku {
   }
 
   launchApp(appId, contentId, mediaType) {
-    fetch(`http://${this.address}:8060/launch/${appId}?contentID=${contentId}&mediaType=${mediaType}`, {
-      method: "POST",
-    })
+    fetch(
+      `http://${this.address}:8060/launch/${appId}?contentID=${contentId}&mediaType=${mediaType}`,
+      {
+        method: "POST",
+      },
+    )
   }
+}
+
+let Roku
+if (process.env.MOCK) {
+  Roku = require("./rokuMock")
+  console.log("Roku", Roku)
+} else {
+  Roku = RokuReal
 }
 
 module.exports = Roku

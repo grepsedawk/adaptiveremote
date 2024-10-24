@@ -9,24 +9,24 @@ AdaptiveRemote is an application designed to control Roku devices using a Raspbe
 ## Installation
 
 1. Clone the repository:
-    ```bash
-    git clone https://github.com/grepsedawk/adaptiveremote.git
-    ```
+   ```bash
+   git clone https://github.com/grepsedawk/adaptiveremote.git
+   ```
 2. Navigate to the project directory:
-    ```bash
-    cd adaptiveremote
-    ```
+   ```bash
+   cd adaptiveremote
+   ```
 3. Install the dependencies:
-    ```bash
-    npm install
-    ```
+   ```bash
+   npm install
+   ```
 
 ## Usage
 
 1. Start the application:
-    ```bash
-    npm start
-    ```
+   ```bash
+   npm start
+   ```
 2. Access the application via http://localhost:3000 for development purposes
 
 ## Contribution

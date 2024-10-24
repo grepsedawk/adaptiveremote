@@ -4,4 +4,5 @@ block content
   h1 Roku Devices Found
   ul
     each device in rokuDevices
-      li= device.address
+      li
+        a(href=`/roku/${device.ip}/${device.mac}`) #{device.friendlyName} (#{device.ip})

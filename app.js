@@ -8,6 +8,8 @@ var indexRouter = require("./routes/index")
 var rokuRouter = require("./routes/roku")
 var remoteRouter = require("./routes/remote")
 
+var JsonDB = require("./support/jsonDB")
+
 var app = express()
 
 // view engine setup
@@ -39,5 +41,7 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500)
   res.render("error", { title: "Error" })
 })
+
+app.locals.db = new JsonDB("db.json")
 
 module.exports = app
