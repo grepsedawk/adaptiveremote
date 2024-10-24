@@ -15,11 +15,18 @@ router.get("/key/:key", async function (req, res, next) {
   res.json({ status: "success" })
 })
 
-router.get("/launch/:app/:contentId/:mediaType", async function (req, res, next) {
-  const roku = new Roku("10.0.0.141")
-  await roku.launchApp(req.params.app, req.params.contentId, req.params.mediaType)
+router.get(
+  "/launch/:app/:contentId/:mediaType",
+  async function (req, res, next) {
+    const roku = new Roku("10.0.0.141")
+    await roku.launchApp(
+      req.params.app,
+      req.params.contentId,
+      req.params.mediaType,
+    )
 
-  res.json({ status: "success" })
-})
+    res.json({ status: "success" })
+  },
+)
 
 module.exports = router

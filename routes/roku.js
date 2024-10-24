@@ -10,4 +10,12 @@ router.get("/", async function (req, res, next) {
   })
 })
 
+router.get("/:ip/:mac", async function (req, res, next) {
+  req.app.locals.db.set("rokuDevice", {
+    ip: req.params.ip,
+    mac: req.params.mac,
+  })
+  res.redirect("/remote")
+})
+
 module.exports = router
