@@ -5,7 +5,7 @@ var cookieParser = require("cookie-parser")
 var logger = require("morgan")
 
 var indexRouter = require("./routes/index")
-var rokuRouter = require("./routes/roku")
+var configureRouter = require("./routes/configure")
 var remoteRouter = require("./routes/remote")
 
 var JsonDB = require("./support/jsonDB")
@@ -23,7 +23,7 @@ app.use(cookieParser())
 app.use(express.static(path.join(__dirname, "public")))
 
 app.use("/", indexRouter)
-app.use("/roku", rokuRouter)
+app.use("/configure", configureRouter)
 app.use("/remote", remoteRouter)
 
 // catch 404 and forward to error handler

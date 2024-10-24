@@ -5,4 +5,4 @@ block content
   ul
     each device in rokuDevices
       li
-        a(href=`/roku/${device.ip}/${device.mac}`) #{device.friendlyName} (#{device.ip})
+        a(href=`/configure/${device.ip}/${device.mac}`) #{device.friendlyName} (#{device.ip})
