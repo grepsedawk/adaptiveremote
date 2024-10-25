@@ -3,8 +3,17 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
-  body
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js') // for sun/moon icons
+  body(class='light')  // default is light mode
     nav
-      a(href='/') Home
-      a(href='/roku') Roku
+      .nav-left
+        a(href='/') Home
+        a(href='/set_up_remote') Remote Set Up
+        a(href='/help') Help
+        a(href='/about_us') About Us
+      .nav-right
+        button#theme-toggle.btn-toggle
+          i.fas.fa-sun  // default sun icon
     block content
+
+    script(src='/dynamics/theme_toggle.js')  // corrected path for the script
