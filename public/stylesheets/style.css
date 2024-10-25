@@ -1,7 +1,11 @@
 /* Light Mode */
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font:
+    14px "Lucida Grande",
+    Helvetica,
+    Arial,
+    sans-serif;
   background-color: #ffffff;
   color: #333333;
 }
@@ -108,7 +112,8 @@ body.dark button:hover {
   background-color: #555;
 }
 
-body.dark h1, body.dark h2 {
+body.dark h1,
+body.dark h2 {
   color: #ffffff;
 }
 

@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -28,7 +29,9 @@ button.power {
   color: #ffffff;
   font-size: 2rem;
   cursor: pointer;
-  transition: background-color 0.3s ease, border 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    border 0.3s ease;
 }
 
 button.power.active {
@@ -63,7 +66,14 @@ button {
   transition: background-color 0.3s ease;
 }
 
-button.movie1, button.movie2, button.movie3, button.movie4, button.movie5, button.movie6, button.movie7, button.movie8 {
+button.movie1,
+button.movie2,
+button.movie3,
+button.movie4,
+button.movie5,
+button.movie6,
+button.movie7,
+button.movie8 {
   background-color: #6f4be3;
   color: #ffffff;
 }
