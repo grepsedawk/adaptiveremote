@@ -8,14 +8,21 @@ body[data-theme='light'] {
   body[data-theme='dark'] {
     background-color: black;
     color: white;
-  }  
+  }
   
+  /* Navbar styling */
   nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #005f99; /* Blue background */
-    padding: 20px; /* Double height */
+    padding: 30px; /* Increased padding */
+    border: 1px solid black; /* Black border in light mode */
+  }
+  
+  /* Change border color in dark mode */
+  body[data-theme='dark'] nav {
+    border: 1px solid white; /* White border in dark mode */
   }
   
   .nav-left {
@@ -35,7 +42,7 @@ body[data-theme='light'] {
   
   .nav-right a {
     font-family: 'Garet', sans-serif;
-    font-size: 18px;
+    font-size: 18px; /* Font size for navbar buttons */
     color: black;
     background-color: #d3d3d3; /* Slightly lighter gray */
     border: 1px solid black;
@@ -44,41 +51,99 @@ body[data-theme='light'] {
     border-radius: 4px;
   }
   
+  /* Change colors in dark mode */
+  body[data-theme='dark'] .nav-right a {
+    color: white; /* White text in dark mode */
+    background-color: #333333; /* Dark gray background for buttons in dark mode */
+    border: 1px solid white; /* White border in dark mode */
+  }
+  
+  /* Hover color for navbar buttons */
   .nav-right a:hover {
-    background-color: #cccccc; /* Lighter gray on hover */
+    background-color: #bfbfbf; /* Darker gray on hover in light mode */
   }
   
+  /* Change hover color in dark mode */
+  body[data-theme='dark'] .nav-right a:hover {
+    background-color: #444444; /* Darker gray on hover in dark mode */
+  }
+  
+  /* Theme toggle button */
   #theme-toggle {
-    margin-left: 15px;
-  }
-  
-  .container {
-    padding: 20px;
-  }
-  
-  h1 {
-    font-size: 52px;
-    font-family: 'Neue Machina', sans-serif;
-    font-weight: bold;
-  }
-  
-  p {
-    font-size: 29px;
-    font-family: 'Neue Machina', sans-serif;
-  }
-  
-  .btn {
-    font-size: 18px;
-    font-family: 'Garet', sans-serif;
+    font-family: 'Garet', sans-serif; /* Same font as navbar buttons */
+    font-size: 18px; /* Match font size with navbar buttons */
     color: black;
-    background-color: grey;
+    background-color: #d3d3d3; /* Same color as other buttons */
     border: 1px solid black;
-    padding: 10px 15px;
+    padding: 8px 12px; /* Same padding as other buttons */
     text-decoration: none;
     border-radius: 4px;
   }
   
+  /* Change theme toggle button colors in dark mode */
+  body[data-theme='dark'] #theme-toggle {
+    color: white; /* White text in dark mode */
+    background-color: #333333; /* Dark gray background */
+    border: 1px solid white; /* White border in dark mode */
+  }
+  
+  #theme-toggle:hover {
+    background-color: #bfbfbf; /* Match hover effect of other buttons */
+  }
+  
+  /* Hover effect for theme toggle in dark mode */
+  body[data-theme='dark'] #theme-toggle:hover {
+    background-color: #444444; /* Darker gray on hover in dark mode */
+  }
+  
+  /* Container for page content */
+  .container {
+    padding: 20px;
+  }
+  
+  /* Typography */
+  h1 {
+    font-size: 52px; /* Font size for h1 */
+    font-family: 'Neue Machina', sans-serif;
+    font-weight: bold;
+    margin-bottom: 20px; /* Maintain vertical distance from p */
+  }
+  
+  p {
+    font-size: 29px; /* Font size for p */
+    font-family: 'Neue Machina', sans-serif;
+    margin-bottom: 10px; /* Reduced vertical distance between p elements */
+  }
+  
+  /* General button styling outside the navbar */
+  .btn {
+    font-family: 'Courier New', Courier, monospace; /* Monospace font style */
+    font-size: 21.6px; /* 20% bigger than 18px */
+    padding: 12px 18px; /* 20% bigger padding */
+    border: 1px solid black;
+    text-decoration: none;
+    border-radius: 0; /* Rectangle shape */
+  }
+  
+  /* Button colors based on theme */
+  body[data-theme='light'] .btn {
+    color: black;
+    background-color: white;
+    border-color: black;
+  }
+  
+  body[data-theme='dark'] .btn {
+    color: white;
+    background-color: black;
+    border-color: white; /* White border in dark mode */
+  }
+  
+  /* Hover effect for general buttons */
   .btn:hover {
-    background-color: #cccccc;
+    background-color: #e0e0e0; /* Darker gray for light mode */
+  }
+  
+  body[data-theme='dark'] .btn:hover {
+    background-color: #333333; /* Darker gray for dark mode */
   }
   

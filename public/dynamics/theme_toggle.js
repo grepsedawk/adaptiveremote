@@ -1,13 +1,21 @@
-// theme_toggle.js
-const themeToggle = document.getElementById('theme-toggle');
-const body = document.body;
+document.addEventListener("DOMContentLoaded", () => {
+  const themeToggleButton = document.getElementById("theme-toggle");
+  const currentTheme = localStorage.getItem("theme") || "light";
 
-themeToggle.addEventListener('click', () => {
-  if (body.dataset.theme === 'dark') {
-    body.dataset.theme = 'light';
-    themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-  } else {
-    body.dataset.theme = 'dark';
-    themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-  }
+  // Apply stored theme
+  document.body.setAttribute("data-theme", currentTheme);
+
+  // Update icon based on theme
+  themeToggleButton.querySelector("i").className =
+    currentTheme === "dark" ? "fas fa-moon" : "fas fa-sun";
+
+  themeToggleButton.addEventListener("click", () => {
+    const newTheme = document.body.getAttribute("data-theme") === "light" ? "dark" : "light";
+    document.body.setAttribute("data-theme", newTheme);
+    localStorage.setItem("theme", newTheme);
+
+    // Update icon based on new theme
+    themeToggleButton.querySelector("i").className =
+      newTheme === "dark" ? "fas fa-moon" : "fas fa-sun";
+  });
 });
