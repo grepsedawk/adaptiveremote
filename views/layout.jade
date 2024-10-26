@@ -4,15 +4,16 @@ html
     title= title
     link(rel='stylesheet', href='/stylesheets/web_page.css')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js')
-  body(class='light')
+  body(data-theme='light')
     nav
       .nav-left
+        img(src='/path/to/logo.png', alt='Logo') // Replace with the actual path to your logo
+      .nav-right
         a(href='/') Home
         a(href='/set_up_remote') Remote Set Up
         a(href='/configure') Configure
         a(href='/help') Help
         a(href='/about_us') About Us
-      .nav-right
         button#theme-toggle.btn-toggle
           i.fas.fa-sun
     block content
