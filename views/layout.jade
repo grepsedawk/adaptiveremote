@@ -2,19 +2,19 @@ doctype html
 html
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-    script(src='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js')
-  body(class='light')
+    link(rel='stylesheet', href='/stylesheets/web_page.css')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css')
+  body(data-theme='light')
     nav
       .nav-left
+        img(src='/images/4.png', alt='Logo') // Add the logo here
+      .nav-right
         a(href='/') Home
         a(href='/set_up_remote') Remote Set Up
         a(href='/configure') Configure
         a(href='/help') Help
         a(href='/about_us') About Us
-      .nav-right
         button#theme-toggle.btn-toggle
-          i.fas.fa-sun
+          i // Leave this empty; the icon will be set dynamically by JavaScript
     block content
-
     script(src='/dynamics/theme_toggle.js')

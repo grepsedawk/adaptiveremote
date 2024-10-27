@@ -1,0 +1,177 @@
+/* Light mode (default) */
+body[data-theme='light'] {
+    background-color: white;
+    color: black;
+}
+
+/* Dark mode */
+body[data-theme='dark'] {
+    background-color: black;
+    color: white;
+}
+
+/* Navbar styling */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #005f99;
+    padding: 30px;
+    border: 1px solid black;
+}
+
+/* Change border color in dark mode */
+body[data-theme='dark'] nav {
+    border: 1px solid white;
+}
+
+.nav-left {
+    flex-grow: 1;
+}
+
+.nav-left img {
+    height: 50px;
+    margin-right: 15px;
+}
+
+.nav-right {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.nav-right a {
+    font-family: 'Garet', sans-serif;
+    font-size: 18px;
+    color: black;
+    background-color: #d3d3d3;
+    border: 1px solid black;
+    padding: 8px 12px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+/* Change colors in dark mode */
+body[data-theme='dark'] .nav-right a {
+    color: white;
+    background-color: #333333;
+    border: 1px solid white;
+}
+
+.nav-right a:hover {
+    background-color: #bfbfbf;
+}
+
+body[data-theme='dark'] .nav-right a:hover {
+    background-color: #444444;
+}
+
+/* Theme toggle button */
+#theme-toggle {
+    font-family: 'Garet', sans-serif;
+    font-size: 18px;
+    color: black;
+    background-color: #d3d3d3;
+    border: 1px solid black;
+    padding: 8px 12px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+body[data-theme='dark'] #theme-toggle {
+    color: white;
+    background-color: #333333;
+    border: 1px solid white;
+}
+
+#theme-toggle:hover {
+    background-color: #bfbfbf;
+}
+
+body[data-theme='dark'] #theme-toggle:hover {
+    background-color: #444444;
+}
+
+/* Container for page content */
+.container {
+    padding: 20px;
+}
+
+/* Typography */
+h1 {
+    font-size: 52px;
+    font-family: 'Neue Machina', sans-serif;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 29px;
+    font-family: 'Neue Machina', sans-serif;
+    margin-bottom: 10px;
+}
+
+/* General button styling outside the navbar */
+.btn {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 21.6px;
+    padding: 12px 18px;
+    border: 1px solid black;
+    text-decoration: none;
+    border-radius: 0;
+    margin-top: 20px;
+}
+
+body[data-theme='light'] .btn {
+    color: black;
+    background-color: white;
+    border-color: black;
+}
+
+body[data-theme='dark'] .btn {
+    color: white;
+    background-color: black;
+    border-color: white;
+}
+
+.btn:hover {
+    background-color: #e0e0e0;
+}
+
+body[data-theme='dark'] .btn:hover {
+    background-color: #333333;
+}
+
+/* Spacing adjustments for homepage elements */
+.container p + a.btn {
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.home-image {
+    margin-top: 30px;
+}
+
+/* Remote Setup Page Styling */
+.remote-setup {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.remote-section {
+    width: 45%;
+    text-align: center;
+}
+
+.remote-section img {
+    width: 100%; /* Adjust size to fit section width */
+    max-width: 300px; /* Limit max image width */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.remote-section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}

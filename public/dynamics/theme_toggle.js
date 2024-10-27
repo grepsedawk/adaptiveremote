@@ -1,24 +1,19 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const toggleButton = document.getElementById("theme-toggle")
-  const icon = toggleButton.querySelector("i")
+document.addEventListener("DOMContentLoaded", () => {
+  const themeToggleButton = document.getElementById("theme-toggle");
+  const icon = themeToggleButton.querySelector("i");
+  const currentTheme = localStorage.getItem("theme") || "light";
 
-  // Check local storage for saved theme
-  const savedTheme = localStorage.getItem("theme")
-  if (savedTheme) {
-    document.body.classList.toggle("dark", savedTheme === "dark")
-    icon.classList.toggle("fa-sun", savedTheme === "light")
-    icon.classList.toggle("fa-moon", savedTheme === "dark")
-  }
+  // Apply the stored theme and set the initial icon based on the theme
+  document.body.setAttribute("data-theme", currentTheme);
+  icon.classList.add(currentTheme === "dark" ? "fas": "fa-sun" , "fas", "fa-moon");
 
-  toggleButton.addEventListener("click", () => {
-    document.body.classList.toggle("dark")
-    const isDarkMode = document.body.classList.contains("dark")
+  themeToggleButton.addEventListener("click", () => {
+    const isLightMode = document.body.getAttribute("data-theme") === "light";
+    const newTheme = isLightMode ? "dark" : "light";
+    document.body.setAttribute("data-theme", newTheme);
+    localStorage.setItem("theme", newTheme);
 
-    // Change the icon based on the mode
-    icon.classList.toggle("fa-sun", !isDarkMode)
-    icon.classList.toggle("fa-moon", isDarkMode)
-
-    // Save the theme to localStorage
-    localStorage.setItem("theme", isDarkMode ? "dark" : "light")
-  })
-})
+    // Update icon based on the new theme
+    icon.className = newTheme === "dark" ? "fas fa-sun" : "fas fa-moon";
+  });
+});
