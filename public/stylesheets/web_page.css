@@ -15,14 +15,14 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #005f99; /* Blue background */
-    padding: 30px; /* Increased padding */
-    border: 1px solid black; /* Black border in light mode */
+    background-color: #005f99;
+    padding: 30px;
+    border: 1px solid black;
 }
 
 /* Change border color in dark mode */
 body[data-theme='dark'] nav {
-    border: 1px solid white; /* White border in dark mode */
+    border: 1px solid white;
 }
 
 .nav-left {
@@ -30,8 +30,8 @@ body[data-theme='dark'] nav {
 }
 
 .nav-left img {
-    height: 50px; /* Placeholder size for logo */
-    margin-right: 15px; /* Space between logo and navbar edge */
+    height: 50px;
+    margin-right: 15px;
 }
 
 .nav-right {
@@ -42,9 +42,9 @@ body[data-theme='dark'] nav {
 
 .nav-right a {
     font-family: 'Garet', sans-serif;
-    font-size: 18px; /* Font size for navbar buttons */
+    font-size: 18px;
     color: black;
-    background-color: #d3d3d3; /* Slightly lighter gray */
+    background-color: #d3d3d3;
     border: 1px solid black;
     padding: 8px 12px;
     text-decoration: none;
@@ -53,47 +53,43 @@ body[data-theme='dark'] nav {
 
 /* Change colors in dark mode */
 body[data-theme='dark'] .nav-right a {
-    color: white; /* White text in dark mode */
-    background-color: #333333; /* Dark gray background for buttons in dark mode */
-    border: 1px solid white; /* White border in dark mode */
+    color: white;
+    background-color: #333333;
+    border: 1px solid white;
 }
 
-/* Hover color for navbar buttons */
 .nav-right a:hover {
-    background-color: #bfbfbf; /* Darker gray on hover in light mode */
+    background-color: #bfbfbf;
 }
 
-/* Change hover color in dark mode */
 body[data-theme='dark'] .nav-right a:hover {
-    background-color: #444444; /* Darker gray on hover in dark mode */
+    background-color: #444444;
 }
 
 /* Theme toggle button */
 #theme-toggle {
-    font-family: 'Garet', sans-serif; /* Same font as navbar buttons */
-    font-size: 18px; /* Match font size with navbar buttons */
+    font-family: 'Garet', sans-serif;
+    font-size: 18px;
     color: black;
-    background-color: #d3d3d3; /* Same color as other buttons */
+    background-color: #d3d3d3;
     border: 1px solid black;
-    padding: 8px 12px; /* Same padding as other buttons */
+    padding: 8px 12px;
     text-decoration: none;
     border-radius: 4px;
 }
 
-/* Change theme toggle button colors in dark mode */
 body[data-theme='dark'] #theme-toggle {
-    color: white; /* White text in dark mode */
-    background-color: #333333; /* Dark gray background */
-    border: 1px solid white; /* White border in dark mode */
+    color: white;
+    background-color: #333333;
+    border: 1px solid white;
 }
 
 #theme-toggle:hover {
-    background-color: #bfbfbf; /* Match hover effect of other buttons */
+    background-color: #bfbfbf;
 }
 
-/* Hover effect for theme toggle in dark mode */
 body[data-theme='dark'] #theme-toggle:hover {
-    background-color: #444444; /* Darker gray on hover in dark mode */
+    background-color: #444444;
 }
 
 /* Container for page content */
@@ -103,29 +99,29 @@ body[data-theme='dark'] #theme-toggle:hover {
 
 /* Typography */
 h1 {
-    font-size: 52px; /* Font size for h1 */
+    font-size: 52px;
     font-family: 'Neue Machina', sans-serif;
     font-weight: bold;
-    margin-bottom: 20px; /* Maintain vertical distance from p */
+    margin-bottom: 20px;
 }
 
 p {
-    font-size: 29px; /* Font size for p */
+    font-size: 29px;
     font-family: 'Neue Machina', sans-serif;
-    margin-bottom: 10px; /* Reduced vertical distance between p elements */
+    margin-bottom: 10px;
 }
 
 /* General button styling outside the navbar */
 .btn {
-    font-family: 'Courier New', Courier, monospace; /* Monospace font style */
-    font-size: 21.6px; /* 20% bigger than 18px */
-    padding: 12px 18px; /* 20% bigger padding */
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 21.6px;
+    padding: 12px 18px;
     border: 1px solid black;
     text-decoration: none;
-    border-radius: 0; /* Rectangle shape */
+    border-radius: 0;
+    margin-top: 20px; /* Lower button position slightly */
 }
 
-/* Button colors based on theme */
 body[data-theme='light'] .btn {
     color: black;
     background-color: white;
@@ -135,14 +131,23 @@ body[data-theme='light'] .btn {
 body[data-theme='dark'] .btn {
     color: white;
     background-color: black;
-    border-color: white; /* White border in dark mode */
+    border-color: white;
 }
 
-/* Hover effect for general buttons */
 .btn:hover {
-    background-color: #e0e0e0; /* Darker gray for light mode */
+    background-color: #e0e0e0;
 }
 
 body[data-theme='dark'] .btn:hover {
-    background-color: #333333; /* Darker gray for dark mode */
+    background-color: #333333;
+}
+
+/* Spacing adjustments for homepage elements */
+.container p + a.btn {
+    margin-top: 20px; /* Space between text and button */
+    display: inline-block;
+}
+
+.home-image {
+    margin-top: 30px; /* Additional space for image placeholder */
 }
