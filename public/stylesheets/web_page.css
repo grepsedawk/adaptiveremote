@@ -156,6 +156,7 @@ body[data-theme='dark'] .btn:hover {
 .remote-setup {
     display: flex;
     justify-content: space-between;
+    gap: 20px; /* Bring sections closer together */
     margin-top: 40px;
 }
 
@@ -165,13 +166,60 @@ body[data-theme='dark'] .btn:hover {
 }
 
 .remote-section img {
-    width: 100%; /* Adjust size to fit section width */
-    max-width: 300px; /* Limit max image width */
+    width: 100%;
+    max-width: 300px;
     height: auto;
-    margin-bottom: 20px;
+    margin-bottom: 5px; /* Reduce gap between image and text */
 }
 
 .remote-section h2 {
     font-size: 24px;
-    margin-bottom: 10px;
+    font-family: 'Neue Machina', sans-serif;
+    margin-bottom: 15px; /* Extra space to prevent text-button collision */
+}
+
+.remote-section h2 + a.btn {
+    margin-top: 15px; /* Space between text and button */
+}
+
+/* Accordion Styling */
+.accordion {
+    font-family: 'Garet', sans-serif;
+    background-color: #d3d3d3;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: 1px solid black;
+    text-align: left;
+    outline: none;
+    transition: background-color 0.4s;
+}
+
+.accordion:hover {
+    background-color: #bfbfbf;
+}
+
+.active, .accordion.active {
+    background-color: #ccc;
+}
+
+.accordion::after {
+    content: '\002B'; /* Plus symbol */
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.accordion.active::after {
+    content: "\2212"; /* Minus symbol */
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.2s ease-out;
 }
