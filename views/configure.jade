@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  .container
+    .remote-setup
+      .remote-section.left
+        img(src='/images/2.png', alt='Pair to Roku')
+        h2 Pair to Roku
+        a.btn(href='/configure/roku') Let's Start!
+        //- TODO: Display currently paired roku device or "No Device Paired"
+
+      .remote-section.right
+        img(src='/images/3.png', alt='Program remote buttons')
+        h2 Program remote buttons
+        a.btn(href='/settings') Edit Remote

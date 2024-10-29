@@ -4,6 +4,13 @@ const dgram = require("dgram")
 const Roku = require("../support/roku")
 
 router.get("/", async function (req, res, next) {
+  res.render("configure", {
+    title: "Configure",
+    rokuDevices: await Roku.listDevices(),
+  })
+})
+
+router.get("/roku", async function (req, res, next) {
   res.render("roku", {
     title: "Configure Roku",
     rokuDevices: await Roku.listDevices(),
@@ -15,7 +22,7 @@ router.get("/:ip/:mac", async function (req, res, next) {
     ip: req.params.ip,
     mac: req.params.mac,
   })
-  res.redirect("/remote")
+  res.redirect("/configure")
 })
 
 module.exports = router

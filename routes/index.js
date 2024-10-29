@@ -5,10 +5,6 @@ router.get("/", function (req, res, next) {
   res.render("index", { title: "Configure" })
 })
 
-router.get("/set_up_remote", function (req, res, next) {
-  res.render("set_up_remote", { title: "Remote Set Up" })
-})
-
 router.get("/pair", function (req, res, next) {
   res.render("pair", { title: "Pair RemoteASK" })
 })
