@@ -1,0 +1,19 @@
+// Accordion functionality
+document.addEventListener("DOMContentLoaded", function() {
+  const acc = document.querySelectorAll(".accordion");
+
+  acc.forEach(button => {
+    button.addEventListener("click", function() {
+      // Toggle active class to highlight active accordion
+      this.classList.toggle("active");
+
+      // Select the next panel and toggle its max-height
+      const panel = this.nextElementSibling;
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      }
+    });
+  });
+});
