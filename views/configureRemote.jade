@@ -1,0 +1,49 @@
+extends layout
+
+block content
+  .container
+    h1 Configure Remote Buttons
+    form#mediaForm(action="/configure/remote", method="POST")
+        each item in remoteButtons
+          - const itemIndex = remoteButtons.indexOf(item)
+          div
+            label App ID:
+            input(type="number", name="items[#{itemIndex}][appId]", value="#{item.appId}", required)
+
+            label Content ID:
+            input(type="text", name="items[#{itemIndex}][contentId]", value="#{item.contentId}", required)
+
+            label Media Type:
+            select(name="items[#{itemIndex}][mediaType]", required)
+              option(value="movie", selected=item.mediaType === 'movie') Movie
+              option(value="series", selected=item.mediaType === 'series') Series
+            button(type="button", onclick="this.parentNode.remove()") Remove
+
+        button(type="submit") Save
+    button(type="button", onclick="addItem()") Add Another Remote Button
+
+    script.
+      let itemIndex = #{remoteButtons.length - 1};
+      function addItem() {
+        const form = document.getElementById('mediaForm');
+        const newItem = document.createElement('div');
+        newItem.className = 'item';
+        itemIndex++;
+        newItem.innerHTML = `
+          <label>App ID:</label>
+          <input type="number" name="items[${itemIndex}][appId]" required>
+
+          <label>Content ID:</label>
+          <input type="text" name="items[${itemIndex}][contentId]" required>
+
+          <label>Media Type:</label>
+          <select name="items[${itemIndex}][mediaType]" required>
+            <option value="movie">Movie</option>
+            <option value="series">Series</option>
+          </select>
+          <button type="button" onclick="this.parentNode.remove()">Remove</button>
+        `;
+
+        form.insertBefore(newItem, form.lastChild);
+        itemIndex++;
+      }
