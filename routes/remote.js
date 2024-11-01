@@ -3,13 +3,18 @@ const router = express.Router()
 const Roku = require("../support/roku")
 
 router.get("/", async function (req, res, next) {
-  res.render("remote", { title: "Roku Remote" })
-  // TODO: remove keypress on get page load
-  const roku = new Roku("10.0.0.141")
+  const db = req.app.locals.db
+  const remoteButtons = await db.get("remoteButtons")
+  res.render("remote", { 
+    title: "Roku Remote",
+    remoteButtons: remoteButtons,
+  })
 })
 
 router.get("/key/:key", async function (req, res, next) {
-  const roku = new Roku("10.0.0.141")
+  const db = req.app.locals.db
+  const rokuDevice = await db.get("rokuDevice")
+  const roku = new Roku(rokuDevice.ip)
   await roku.sendKey(req.params.key)
 
   res.json({ status: "success" })
@@ -18,7 +23,9 @@ router.get("/key/:key", async function (req, res, next) {
 router.get(
   "/launch/:app/:contentId/:mediaType",
   async function (req, res, next) {
-    const roku = new Roku("10.0.0.141")
+    const db = req.app.locals.db
+    const rokuDevice = await db.get("rokuDevice")
+    const roku = new Roku(rokuDevice.ip)
     await roku.launchApp(
       req.params.app,
       req.params.contentId,

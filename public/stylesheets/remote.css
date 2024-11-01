@@ -66,14 +66,7 @@ button {
   transition: background-color 0.3s ease;
 }
 
-button.movie1,
-button.movie2,
-button.movie3,
-button.movie4,
-button.movie5,
-button.movie6,
-button.movie7,
-button.movie8 {
+.button-grid button {
   background-color: #6f4be3;
   color: #ffffff;
 }

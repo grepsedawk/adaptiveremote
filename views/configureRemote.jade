@@ -7,6 +7,9 @@ block content
         each item in remoteButtons
           - const itemIndex = remoteButtons.indexOf(item)
           div
+            label Title:
+            input(type="text", name="items[#{itemIndex}][title]", value="#{item.title}", required)
+
             label App ID:
             input(type="number", name="items[#{itemIndex}][appId]", value="#{item.appId}", required)
 
@@ -30,6 +33,9 @@ block content
         newItem.className = 'item';
         itemIndex++;
         newItem.innerHTML = `
+          <label>Title:</label>
+          <input type="text" name="items[${itemIndex}][title]" required>
+
           <label>App ID:</label>
           <input type="number" name="items[${itemIndex}][appId]" required>
 

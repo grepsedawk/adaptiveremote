@@ -10,6 +10,8 @@ html
         i(class="fas fa-power-off")
 
       .button-grid
+        each button in remoteButtons
+          button(onclick=`fetch('/remote/launch/${button.appId}/${button.contentId}/${button.mediaType}')`) #{button.title}
         button.movie1(onclick="fetch('/remote/launch/12/70176514/series')") Naruto
         button.movie2(onclick="fetch('/remote/launch/12/80180046/series')") Grey's
         button.movie3(onclick="fetch('/remote/launch/291097/622e6dbd-79d2-49ec-b2f5-2a46a29bd57d/series')") Cheetah

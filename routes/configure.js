@@ -16,11 +16,37 @@ router.get("/roku", async function (req, res, next) {
   })
 })
 
+// default buttons:
+//         button.movie1(onclick="fetch('/remote/launch/12/70176514/series')") Naruto
+        // button.movie2(onclick="fetch('/remote/launch/12/80180046/series')") Grey's
+        // button.movie3(onclick="fetch('/remote/launch/291097/622e6dbd-79d2-49ec-b2f5-2a46a29bd57d/series')") Cheetah
+
 router.get("/remote", async function (req, res, next) {
   const db = req.app.locals.db
+  const buttonDefaults = [
+    {
+      title: "Naruto",
+      appId: 12,
+      contentId: "70176514",
+      mediaType: "series",
+    },
+    {
+      title: "Grey's Anatomy",
+      appId: 12,
+      contentId: "80180046",
+      mediaType: "series",
+    },
+    {
+      title: "Cheetah",
+      appId: 291097,
+      contentId: "622e6dbd-79d2-49ec-b2f5-2a46a29bd57d",
+      mediaType: "movie",
+    },
+  ]
+
   res.render("configureRemote", {
     title: "Remote",
-    remoteButtons: await db.get("remoteButtons")
+    remoteButtons: await db.get("remoteButtons") || buttonDefaults
   })
 })
 
@@ -29,6 +55,7 @@ router.post("/remote", async function (req, res, next) {
   const remoteButtons = Object.keys(req.body).filter((key) => key.includes("appId")).map((key) => {
     const index = key.match(/\[(\d+)\]/)[1]
     return {
+      title: req.body[`items[${index}][title]`],
       appId: req.body[`items[${index}][appId]`],
       contentId: req.body[`items[${index}][contentId]`],
       mediaType: req.body[`items[${index}][mediaType]`],
